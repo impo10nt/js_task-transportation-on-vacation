@@ -9,18 +9,18 @@ function calculateRentalCost(days) {
   const rentPerDay = 40;
   const threeDaysOff = 20;
   const sevenDaysOff = 50;
+  const dayForFirsOff = 3;
+  const dayForSecondOff = 7;
 
-  if (days < 3) {
+  if (days < dayForFirsOff) {
     return days * rentPerDay;
   }
 
-  if (days < 7) {
+  if (days < dayForSecondOff) {
     return days * rentPerDay - threeDaysOff;
   }
 
-  if (days >= 7) {
-    return days * rentPerDay - sevenDaysOff;
-  }
+  return days * rentPerDay - sevenDaysOff;
 }
 
 module.exports = calculateRentalCost;
